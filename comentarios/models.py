@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.models import User
+from django.contrib.auth.models import User
 
 
 class Comentario(models.Model):
@@ -9,4 +9,4 @@ class Comentario(models.Model):
     aprovado = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.usuario.first_name
+        return self.usuario.first_name or self.usuario.username

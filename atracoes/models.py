@@ -8,3 +8,6 @@ class Atracao(models.Model):
     descricao = models.TextField()
     hora_funcionamento = models.TextField()
     idade_minima = models.IntegerField()
+
+    def __str__(self):
+        return self.nome
