@@ -19,6 +19,7 @@ from rest_framework import routers
 from core.api.viewsets import PontoTuristicoViewSet
 from atracoes.api.viewsets import AtracaoViewSet
 from localizacao.api.viewsets import LocalizacaoViewSet
+from comentarios.api.viewsets import ComentarioViewSet
 
 router = routers.DefaultRouter()
 router.register(
@@ -33,6 +34,11 @@ router.register(
 router.register(
     r'localizacao',
     LocalizacaoViewSet,
+)
+
+router.register(
+    r'comentarios',
+    ComentarioViewSet,
 )
 
 urlpatterns = [
