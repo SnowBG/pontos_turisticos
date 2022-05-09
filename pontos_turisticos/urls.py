@@ -24,31 +24,15 @@ from avaliacoes.api.viewsets import AvaliacaoViewSet
 
 router = routers.DefaultRouter()
 router.register(
-    r'pontoturistico',
-    PontoTuristicoViewSet,
+    r'pontoturistico', PontoTuristicoViewSet, basename='PontoTuristico'
 )
-router.register(
-    r'atracoes',
-    AtracaoViewSet,
-)
+router.register(r'atracoes', AtracaoViewSet)
 
-router.register(
-    r'localizacao',
-    LocalizacaoViewSet,
-)
+router.register(r'localizacao', LocalizacaoViewSet)
 
-router.register(
-    r'comentarios',
-    ComentarioViewSet,
-)
+router.register(r'comentarios', ComentarioViewSet)
 
-router.register(
-    r'avaliacoes',
-    AvaliacaoViewSet,
-)
+router.register(r'avaliacoes', AvaliacaoViewSet)
 
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path('admin/', admin.site.urls),
-]
+urlpatterns = [path('', include(router.urls)), path('admin/', admin.site.urls)]

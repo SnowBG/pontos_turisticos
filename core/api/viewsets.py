@@ -6,5 +6,7 @@ from core.api.serializers import PontoTuristicoSerializer
 class PontoTuristicoViewSet(ModelViewSet):
     """A ViewSet for PontoTuristico viewing and editing."""
 
-    queryset = PontoTuristico.objects.all()
     serializer_class = PontoTuristicoSerializer
+
+    def get_queryset(self):
+        return PontoTuristico.objects.filter(aprovado=True)
